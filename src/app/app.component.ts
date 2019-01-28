@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
     private _http: HttpClient) {}
 
   ngOnInit(): void {
-    // adding the lifecycle hook ngOnInit
     console.log(this.db);
     this.users = this.db.list('/');
     console.log(this.users);
@@ -24,8 +23,9 @@ export class AppComponent implements OnInit {
 
   fetchData() {
     const token = '74585b6d070c7052fbb4fdb9dbb0e93393785119';
-    const headers = new HttpHeaders().set('Authorization', '74585b6d070c7052fbb4fdb9dbb0e93393785119');
-    this._http.get('http://13.58.37.162/data?token=74585b6d070c7052fbb4fdb9dbb0e93393785119', {headers}).subscribe(data => {
+    const headers = new HttpHeaders().set('Authorization', token);
+    this._http.get('http://13.58.37.162/data?token=${token}', {headers}).subscribe(data => {
+      console.log('----------------');
       console.log(data);
     });
   }

@@ -14,16 +14,18 @@ export class AppUserComponent implements OnInit {
     users: AngularFireList<any>;
     users$: Observable<any[]>;
 
+    // Databse url: https://console.firebase.google.com/project/limchapter12/database/limchapter12/data/
+
     constructor(
         private db: AngularFireDatabase,
-        private _router: Router
-    ) {
+        private _router: Router) {
         // this.users$ = this.users.snapshotChanges();
         this.users = db.list('/');
         this.users$ = this.users.snapshotChanges().map(changes => {
-            return changes.map(c => ({ key: c.payload.key, ...c.payload.val()
-        }));
-    });
+            return changes.map(c => ({
+                key: c.payload.key, ...c.payload.val() })
+            );
+        });
     }
 
     ngOnInit () {
@@ -41,3 +43,4 @@ export class AppUserComponent implements OnInit {
     }
 
 }
+
