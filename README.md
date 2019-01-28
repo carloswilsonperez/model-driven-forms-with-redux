@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
+This containes activity for Model Driven Forms from Greg Lim's Anguñar book, and I also added Redux and connect to Firebase.
+
+To adding Reduz, I used the following tutorial:
+https://medium.com/codingthesmartway-com-blog/angular-and-redux-ecd22ea53492
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
